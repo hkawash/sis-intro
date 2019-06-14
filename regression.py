@@ -17,7 +17,7 @@ order = 1  # 線形モデルの次数を指定 (1 or 2)
 
 # %% 気象庁データ
 # DATADIR = '../../data/eStat-purchase_JMA-temperature'  # パス指定
-DATADIR = './'  # このスクリプトと同じ場所に置く場合はこちら
+DATADIR = './data'
 skiprows = [0, 1, 2, 4]
 usecols = [0, 1, 4, 7, 11]  # 降水量だけ4列であとは3列ずつ
 encoding = 'shift_JIS'
