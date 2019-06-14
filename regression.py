@@ -72,12 +72,9 @@ for i in range(icol_beg, icol_beg + num_itemcols):
     colnew = col.replace('円', '円/日')
     df3[col] = df3[col].str.replace(',', '').astype(float)
     df3[colnew] = df3[col] / days
-# col = df3.columns[5]
 
-# %%
-icol_beg2 = icol_beg + num_itemcols + num_addedcols
-
-# %% df3.plot()
+# %% 回帰 (numpy polyfit にて)
+icol_beg2 = icol_beg + num_itemcols + num_addedcols  # %% 対象データ列の開始番号
 icol_xaxis = 0
 x_name = df3.columns[icol_xaxis]
 y_name = df3.columns[icol_beg2]
@@ -95,8 +92,7 @@ else:
     print('y = {} x^2 + {} x + {}'.format(a1, a2, b))
     ypred = a1 * xdata**2 + a2 * xdata + b
 
-# df3.plot(kind='scatter', x='u{}'.format(df3.columns[1]), y='u{}'.format(df3.columns[7]))
-# %%
+# %% グラフ表示 & PDFへ
 with PdfPages('regression.pdf') as pdf_regression:
     # sns.set_style('whitegrid')
     p = df3.plot(kind='scatter', x=x_name, y=y_name)
