@@ -1,4 +1,4 @@
-# 概論図表作成用
+# 社会情報科学概論の図表作成用
 
 ## 図表
 
@@ -28,14 +28,26 @@
 
 ## 実行結果
 
-### 回帰
+### 回帰 (regression.py)
+
+- 毎月のアイスクリームの購入金額と気温の関係
+  - 参考: アイスクリームの売れ方 (回帰): [奥村先生のページ](https://oku.edu.mie-u.ac.jp/~okumura/stat/160118.html)
+- 毎月の日数を考慮（うるう年も考慮）
+
 <img alt="1st-order" src="fig/regression-white-1st_page_2.png" height="256">
-<img alt="1st-order" src="fig/regression-white-2nd_page_2.png" height="256">
+<img alt="2nd-order" src="fig/regression-white-2nd_page_2.png" height="256">
 
-### クラスタリング
 
-- [クラスタリング結果を地図へ](https://hkawash.github.io/sis-intro/map-clustering_2014-2018.html)
+### クラスタリング (clustering.py)
 
-## 参考
+- 牛肉，豚肉，鶏肉の政令指定都市や県庁所在市ごとの購入量(g)をクラスタリングし，日本地図にプロットすることで，地域による生鮮肉の購入の特徴を可視化する
+- [★クラスタリング結果を地図へ](https://hkawash.github.io/sis-intro/map-clustering_2014-2018.html)
+  - [アマノ技研](https://amano-tec.com/)公開の[全国の地方公共団体の県庁所在地・位置座標データ](https://amano-tec.com/data/localgovernments.html)を使用（2018-10-18版）
+  - 地図へのプロットは folium 使用 (東京都特別区13100の座標は東京都千代田区13101としている)
+  - 西日本は牛肉・鶏肉（生鮮肉自体の購入量が多い）
+  - 東日本は豚肉の購入量が多い
 
-- アイスクリームの売れ方 (回帰): [奥村先生のページ](https://oku.edu.mie-u.ac.jp/~okumura/stat/160118.html)
+<img alt="220-221" src="fig/clustering_2014-2018-white_page_1.png" height="256">
+<img alt="220-222" src="fig/clustering_2014-2018-white_page_2.png" height="256">
+<img alt="221-222" src="fig/clustering_2014-2018-white_page_3.png" height="256">
+

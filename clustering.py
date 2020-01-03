@@ -1,10 +1,19 @@
 # %%
+# １回生概論「第８回 データと機械学習」 クラスタリングの例の図作成用
+# e-Stat の家計調査データを使用
+# 牛肉，豚肉，鶏肉の購入量 (g) によって日本の都市（政令指定都市，顕著所在市）をクラスタリング
+# 都市の座標には，アマノ技研様のデータを使用 https://amano-tec.com/data/localgovernments.html
+#
+# (注) matplotlib は日本語表示できるように設定されているものとする
+#   (Font追加やmatplotlibrc)
+# 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from matplotlib.backends.backend_pdf import PdfPages
 import folium
+import itertools
 # import seaborn as sns
 # import re
 
@@ -69,11 +78,8 @@ df2['cluster'] = pred
 
 # % 散布図で確認
 with PdfPages('clustering.pdf') as pdf_clustering:
-    collists = [[usecols[0], usecols[1]],
-                [usecols[0], usecols[2]],
-                [usecols[1], usecols[2]]]
-    for collist in collists:
-        colname = [df2.columns[c] for c in collist]
+    for colpair in itertools.combinations(usecols, 2):
+        colname = [df2.columns[c] for c in colpair]
 
         ax = df2.plot(kind='scatter', x=colname[0], y=colname[1], c=pred, cmap='brg', colorbar=False)
         for index, row in df2.iterrows():
