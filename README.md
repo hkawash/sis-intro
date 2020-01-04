@@ -36,8 +36,8 @@
 
 <table>
 <tr>
-<td><img alt="1st-order" src="fig/regression-white-1st_page_2.png" height="256"></td>
-<td><img alt="2nd-order" src="fig/regression-white-2nd_page_2.png" height="256"></td>
+<td><img alt="1st-order" src="fig/regression-white-1st_page_2.png" width="256"></td>
+<td><img alt="2nd-order" src="fig/regression-white-2nd_page_2.png" width="256"></td>
 </tr>
 </table>
 
@@ -53,9 +53,9 @@
 
 <table>
 <tr>
-<td><img alt="220-221" src="fig/clustering_2014-2018-white_page_1.png" height="256"></td>
-<td><img alt="220-222" src="fig/clustering_2014-2018-white_page_2.png" height="256"></td>
-<td><img alt="221-222" src="fig/clustering_2014-2018-white_page_3.png" height="256"></td>
+<td><img alt="220-221" src="fig/clustering_2014-2018-white_page_1.png" width="256"></td>
+<td><img alt="220-222" src="fig/clustering_2014-2018-white_page_2.png" width="256"></td>
+<td><img alt="221-222" src="fig/clustering_2014-2018-white_page_3.png" width="256"></td>
 </tr>
 </table>
 
