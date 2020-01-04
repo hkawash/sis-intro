@@ -51,3 +51,27 @@
 <img alt="220-222" src="fig/clustering_2014-2018-white_page_2.png" height="256">
 <img alt="221-222" src="fig/clustering_2014-2018-white_page_3.png" height="256">
 
+### 相関
+
+#### 生鮮肉の購入量の相関 (correlation_meat.py)
+
+- 相関係数の計算
+  - 牛肉と豚肉の購入量には負の相関
+  - 牛肉と鶏肉の購入量には正の相関
+- 散布図のプロット (seaborn の pairplot)
+
+#### 気温と購入金額の相関 (correlation_temp.py)
+
+- アイスと気温には正の相関
+- チョコと気温には負の相関 (2月は外れ値)
+- [★お菓子については全てプロット（さらに月ごとに点を色分け）した結果](corr-temp.md)
+
+#### 相関係数の計算の説明用の図作成 (correlation_artificial.py)
+
+- 人工的な数学，物理の点のデータの散布図
+- 偏差積の説明用
+
+#### 疑似相関の説明用のネットワーク図 (relation_network.py)
+
+- networkx と graphviz で，第三の変数の介在を説明するためのネットワーク図を出力
+
