@@ -34,8 +34,12 @@
   - 参考: アイスクリームの売れ方 (回帰): [奥村先生のページ](https://oku.edu.mie-u.ac.jp/~okumura/stat/160118.html)
 - 毎月の日数を考慮（うるう年も考慮）
 
-<img alt="1st-order" src="fig/regression-white-1st_page_2.png" height="256">
-<img alt="2nd-order" src="fig/regression-white-2nd_page_2.png" height="256">
+<table>
+<tr>
+<td><img alt="1st-order" src="fig/regression-white-1st_page_2.png" height="256"></td>
+<td><img alt="2nd-order" src="fig/regression-white-2nd_page_2.png" height="256"></td>
+</tr>
+</table>
 
 
 ### クラスタリング (clustering.py)
@@ -47,9 +51,13 @@
   - 西日本は牛肉・鶏肉（生鮮肉自体の購入量が多い）
   - 東日本は豚肉の購入量が多い
 
-<img alt="220-221" src="fig/clustering_2014-2018-white_page_1.png" height="256">
-<img alt="220-222" src="fig/clustering_2014-2018-white_page_2.png" height="256">
-<img alt="221-222" src="fig/clustering_2014-2018-white_page_3.png" height="256">
+<table>
+<tr>
+<td><img alt="220-221" src="fig/clustering_2014-2018-white_page_1.png" height="256"></td>
+<td><img alt="220-222" src="fig/clustering_2014-2018-white_page_2.png" height="256"></td>
+<td><img alt="221-222" src="fig/clustering_2014-2018-white_page_3.png" height="256"></td>
+</tr>
+</table>
 
 ### 相関
 
