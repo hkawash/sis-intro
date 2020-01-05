@@ -28,7 +28,7 @@
 
 ## 実行結果
 
-### 回帰 (regression.py)
+### 回帰 ([regression.py](regression.py))
 
 - 毎月のアイスクリームの購入金額と気温の関係
   - 参考: アイスクリームの売れ方 (回帰): [奥村先生のページ](https://oku.edu.mie-u.ac.jp/~okumura/stat/160118.html)
@@ -42,7 +42,7 @@
 </table>
 
 
-### クラスタリング (clustering.py)
+### クラスタリング ([clustering.py](clustering.py))
 
 - 牛肉，豚肉，鶏肉の政令指定都市や県庁所在市ごとの購入量(g)をクラスタリングし，日本地図にプロットすることで，地域による生鮮肉の購入の特徴を可視化する
 - [★クラスタリング結果を地図へ](https://hkawash.github.io/sis-intro/map-clustering_2014-2018.html)
@@ -61,25 +61,28 @@
 
 ### 相関
 
-#### 生鮮肉の購入量の相関 (correlation_meat.py)
+#### 生鮮肉の購入量の相関 ([correlation_meat.py](correlation_meat.py))
 
 - 相関係数の計算
   - 牛肉と豚肉の購入量には負の相関
   - 牛肉と鶏肉の購入量には正の相関
 - 散布図のプロット (seaborn の pairplot)
 
-#### 気温と購入金額の相関 (correlation_temp.py)
+#### 気温と購入金額の相関 ([correlation_temp.py](correlation_temp.py))
 
 - アイスと気温には正の相関
 - チョコと気温には負の相関 (2月は外れ値)
 - [★お菓子については全てプロット（さらに月ごとに点を色分け）した結果](corr-temp.md)
 
-#### 相関係数の計算の説明用の図作成 (correlation_artificial.py)
+#### 相関係数の計算の説明用の図作成 ([correlation_artificial.py](correlation_artificial.py))
 
 - 人工的な数学，物理の点のデータの散布図
 - 偏差積の説明用
 
-#### 疑似相関の説明用のネットワーク図 (relation_network.py)
+#### 疑似相関の説明用のネットワーク図 ([relation_network.py](relation_network.py))
 
 - networkx と graphviz で，第三の変数の介在を説明するためのネットワーク図を出力
 
+#### 非単調なデータでのスピアマンの順位相関係数 ([nonlinear_uncorrelated.py](nonlinear_uncorrelated.py))
+
+- y=x^2 の関係
