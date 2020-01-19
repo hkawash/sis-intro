@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_41b15e8a0f33465c85eaa5a2b17bcb86 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_41b15e8a0f33465c85eaa5a2b17bcb86" ></div>
+        
+</body>
+<script>    
+    
+            var map_41b15e8a0f33465c85eaa5a2b17bcb86 = L.map(
+                "map_41b15e8a0f33465c85eaa5a2b17bcb86",
+                {
+                    center: [35.0, 135.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                    zoomStarts: 4,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0ea637795ba648de8b451870d88c7f05 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e.Data by \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e,under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var marker_fcec74988ee2489daf96fb5b7033372c = L.marker(
+                [35.861601, 139.645354],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_9fcae49bff8042d3957e49f57b4c9af0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fcec74988ee2489daf96fb5b7033372c.setIcon(icon_9fcae49bff8042d3957e49f57b4c9af0);
+        
+    
+        var popup_e173964b387c4c19ba0a9e7c7c55db8f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6148492b01384367bd2d7b0294a91e96 = $(`<div id="html_6148492b01384367bd2d7b0294a91e96" style="width: 100.0%; height: 100.0%;"><b>さいたま市<br />牛: 5715.0<br />豚: 22693.0<br />鶏: 15666.4</b></div>`)[0];
+            popup_e173964b387c4c19ba0a9e7c7c55db8f.setContent(html_6148492b01384367bd2d7b0294a91e96);
+        
+
+        marker_fcec74988ee2489daf96fb5b7033372c.bindPopup(popup_e173964b387c4c19ba0a9e7c7c55db8f)
+        ;
+
+        
+    
+    
+            var marker_0039925c07a847b3b17d971a8498c907 = L.marker(
+                [35.011641, 135.76819],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_ff1bd33ea5e6433a9af23dee33288051 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0039925c07a847b3b17d971a8498c907.setIcon(icon_ff1bd33ea5e6433a9af23dee33288051);
+        
+    
+        var popup_17e7c8b740da489f9e4d11fa6d26e6b3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eecde60b06634c7ea09e3a69208d5d04 = $(`<div id="html_eecde60b06634c7ea09e3a69208d5d04" style="width: 100.0%; height: 100.0%;"><b>京都市<br />牛: 9432.4<br />豚: 17865.6<br />鶏: 17617.2</b></div>`)[0];
+            popup_17e7c8b740da489f9e4d11fa6d26e6b3.setContent(html_eecde60b06634c7ea09e3a69208d5d04);
+        
+
+        marker_0039925c07a847b3b17d971a8498c907.bindPopup(popup_17e7c8b740da489f9e4d11fa6d26e6b3)
+        ;
+
+        
+    
+    
+            var marker_22b05be3682d4b2ab7373d2604c7d76d = L.marker(
+                [38.26797, 140.869625],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_faaf2eb675224a4abcb10e3d8f2f6ddf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_22b05be3682d4b2ab7373d2604c7d76d.setIcon(icon_faaf2eb675224a4abcb10e3d8f2f6ddf);
+        
+    
+        var popup_45d9a1393b9b4860998acaf29533cc5b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d866f4d43506460e97c7f005aeaf8aae = $(`<div id="html_d866f4d43506460e97c7f005aeaf8aae" style="width: 100.0%; height: 100.0%;"><b>仙台市<br />牛: 4611.6<br />豚: 21840.2<br />鶏: 13532.0</b></div>`)[0];
+            popup_45d9a1393b9b4860998acaf29533cc5b.setContent(html_d866f4d43506460e97c7f005aeaf8aae);
+        
+
+        marker_22b05be3682d4b2ab7373d2604c7d76d.bindPopup(popup_45d9a1393b9b4860998acaf29533cc5b)
+        ;
+
+        
+    
+    
+            var marker_7bd64f272c5c438e8b78930f00ad2c8c = L.marker(
+                [33.263376, 130.300771],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_b2f57383fd524887a656052ee66e1011 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7bd64f272c5c438e8b78930f00ad2c8c.setIcon(icon_b2f57383fd524887a656052ee66e1011);
+        
+    
+        var popup_3e8deea8416a43a6a8970be449881634 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bea739455f664080bbba1a065146a4d0 = $(`<div id="html_bea739455f664080bbba1a065146a4d0" style="width: 100.0%; height: 100.0%;"><b>佐賀市<br />牛: 9161.8<br />豚: 18482.6<br />鶏: 19033.4</b></div>`)[0];
+            popup_3e8deea8416a43a6a8970be449881634.setContent(html_bea739455f664080bbba1a065146a4d0);
+        
+
+        marker_7bd64f272c5c438e8b78930f00ad2c8c.bindPopup(popup_3e8deea8416a43a6a8970be449881634)
+        ;
+
+        
+    
+    
+            var marker_2bdd7b3c3b5647ba91875bc451d2b11b = L.marker(
+                [36.389276, 139.063558],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_e3e42f6705384d47a5c11a7509a628fb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2bdd7b3c3b5647ba91875bc451d2b11b.setIcon(icon_e3e42f6705384d47a5c11a7509a628fb);
+        
+    
+        var popup_cf42bf17486b4fca84c17508868fe4e1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d2a682f1ee094c78848c06a4855b9f33 = $(`<div id="html_d2a682f1ee094c78848c06a4855b9f33" style="width: 100.0%; height: 100.0%;"><b>前橋市<br />牛: 3561.0<br />豚: 17279.4<br />鶏: 10926.2</b></div>`)[0];
+            popup_cf42bf17486b4fca84c17508868fe4e1.setContent(html_d2a682f1ee094c78848c06a4855b9f33);
+        
+
+        marker_2bdd7b3c3b5647ba91875bc451d2b11b.bindPopup(popup_cf42bf17486b4fca84c17508868fe4e1)
+        ;
+
+        
+    
+    
+            var marker_6e9bce058d7a4ab2a747c337f77b85b6 = L.marker(
+                [33.883406, 130.875179],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_8cb89bf5ec914e4bb3bb348ced223dc8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6e9bce058d7a4ab2a747c337f77b85b6.setIcon(icon_8cb89bf5ec914e4bb3bb348ced223dc8);
+        
+    
+        var popup_642a83a3ac804e7180ff7eeef8bf2628 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d09d2c244a3c4b77a148ec45aaa75949 = $(`<div id="html_d09d2c244a3c4b77a148ec45aaa75949" style="width: 100.0%; height: 100.0%;"><b>北九州市<br />牛: 8719.8<br />豚: 16184.4<br />鶏: 17920.0</b></div>`)[0];
+            popup_642a83a3ac804e7180ff7eeef8bf2628.setContent(html_d09d2c244a3c4b77a148ec45aaa75949);
+        
+
+        marker_6e9bce058d7a4ab2a747c337f77b85b6.bindPopup(popup_642a83a3ac804e7180ff7eeef8bf2628)
+        ;
+
+        
+    
+    
+            var marker_d8a9745fd00244ebb24b90967d9eead5 = L.marker(
+                [35.607224, 140.10640700000002],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_acb152db93c044b191b1419342ba256b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d8a9745fd00244ebb24b90967d9eead5.setIcon(icon_acb152db93c044b191b1419342ba256b);
+        
+    
+        var popup_cbc6bad3de0944de8cfec7f19debf440 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e5600d0b71d14aeabe76c05f5df9d11b = $(`<div id="html_e5600d0b71d14aeabe76c05f5df9d11b" style="width: 100.0%; height: 100.0%;"><b>千葉市<br />牛: 6007.0<br />豚: 21321.8<br />鶏: 15583.0</b></div>`)[0];
+            popup_cbc6bad3de0944de8cfec7f19debf440.setContent(html_e5600d0b71d14aeabe76c05f5df9d11b);
+        
+
+        marker_d8a9745fd00244ebb24b90967d9eead5.bindPopup(popup_cbc6bad3de0944de8cfec7f19debf440)
+        ;
+
+        
+    
+    
+            var marker_918e1839f12f4c709d6a5fa7ca3804e5 = L.marker(
+                [35.181754, 136.906489],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_7e7fa26afe2f4f9b8e86ce4a75c3f657 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_918e1839f12f4c709d6a5fa7ca3804e5.setIcon(icon_7e7fa26afe2f4f9b8e86ce4a75c3f657);
+        
+    
+        var popup_19dcc769b139491681b53001b703f631 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2c2125b57def44ee827c69786757994e = $(`<div id="html_2c2125b57def44ee827c69786757994e" style="width: 100.0%; height: 100.0%;"><b>名古屋市<br />牛: 6084.0<br />豚: 19743.8<br />鶏: 15673.2</b></div>`)[0];
+            popup_19dcc769b139491681b53001b703f631.setContent(html_2c2125b57def44ee827c69786757994e);
+        
+
+        marker_918e1839f12f4c709d6a5fa7ca3804e5.bindPopup(popup_19dcc769b139491681b53001b703f631)
+        ;
+
+        
+    
+    
+            var marker_605f662cdde942df84a6b7e5410798a3 = L.marker(
+                [34.230411, 135.17081000000002],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_b0510df247e84abd8ec4e114f19ce126 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_605f662cdde942df84a6b7e5410798a3.setIcon(icon_b0510df247e84abd8ec4e114f19ce126);
+        
+    
+        var popup_42f9a8817682441696d96275f689f051 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_38d28ec6476940629ee68c4e8efd6444 = $(`<div id="html_38d28ec6476940629ee68c4e8efd6444" style="width: 100.0%; height: 100.0%;"><b>和歌山市<br />牛: 9538.0<br />豚: 19189.4<br />鶏: 18441.6</b></div>`)[0];
+            popup_42f9a8817682441696d96275f689f051.setContent(html_38d28ec6476940629ee68c4e8efd6444);
+        
+
+        marker_605f662cdde942df84a6b7e5410798a3.bindPopup(popup_42f9a8817682441696d96275f689f051)
+        ;
+
+        
+    
+    
+            var marker_f6cdf3dfb6654d008807ec96aba8b74e = L.marker(
+                [34.573684, 135.482861],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_0ea8a29e1ea44dd7911591ab10ea4ee2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f6cdf3dfb6654d008807ec96aba8b74e.setIcon(icon_0ea8a29e1ea44dd7911591ab10ea4ee2);
+        
+    
+        var popup_0f76e8c1a6fa4100b0d182a789476fa7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9466718c214c444c8a355139e00bca29 = $(`<div id="html_9466718c214c444c8a355139e00bca29" style="width: 100.0%; height: 100.0%;"><b>堺市<br />牛: 9262.4<br />豚: 19808.2<br />鶏: 18200.4</b></div>`)[0];
+            popup_0f76e8c1a6fa4100b0d182a789476fa7.setContent(html_9466718c214c444c8a355139e00bca29);
+        
+
+        marker_f6cdf3dfb6654d008807ec96aba8b74e.bindPopup(popup_0f76e8c1a6fa4100b0d182a789476fa7)
+        ;
+
+        
+    
+    
+            var marker_c7f865e0dd184d51a4fb925fab413fef = L.marker(
+                [33.239461, 131.60968799999998],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_894dc7aa7d8a469dafd1a970d0a4bf54 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c7f865e0dd184d51a4fb925fab413fef.setIcon(icon_894dc7aa7d8a469dafd1a970d0a4bf54);
+        
+    
+        var popup_d16aa61afce34b778dba824ac91f126b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9a7aa6df975649999e96d8de00c4388d = $(`<div id="html_9a7aa6df975649999e96d8de00c4388d" style="width: 100.0%; height: 100.0%;"><b>大分市<br />牛: 8124.4<br />豚: 17705.8<br />鶏: 20035.0</b></div>`)[0];
+            popup_d16aa61afce34b778dba824ac91f126b.setContent(html_9a7aa6df975649999e96d8de00c4388d);
+        
+
+        marker_c7f865e0dd184d51a4fb925fab413fef.bindPopup(popup_d16aa61afce34b778dba824ac91f126b)
+        ;
+
+        
+    
+    
+            var marker_714484bfc5b14a69aaacb1aecc839d48 = L.marker(
+                [35.017754, 135.85471],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_983b6ab13c3c46f4a6212f532d143ccc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_714484bfc5b14a69aaacb1aecc839d48.setIcon(icon_983b6ab13c3c46f4a6212f532d143ccc);
+        
+    
+        var popup_dd663800e0404f42bd860ea391e63719 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5767496a58614a39af572c7a9831d239 = $(`<div id="html_5767496a58614a39af572c7a9831d239" style="width: 100.0%; height: 100.0%;"><b>大津市<br />牛: 8884.0<br />豚: 18428.0<br />鶏: 17385.2</b></div>`)[0];
+            popup_dd663800e0404f42bd860ea391e63719.setContent(html_5767496a58614a39af572c7a9831d239);
+        
+
+        marker_714484bfc5b14a69aaacb1aecc839d48.bindPopup(popup_dd663800e0404f42bd860ea391e63719)
+        ;
+
+        
+    
+    
+            var marker_f9660d6fd2544b949718f893ba42327e = L.marker(
+                [34.693837, 135.502135],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_8caba9e5c1af4ae19fa87f900cd46c43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f9660d6fd2544b949718f893ba42327e.setIcon(icon_8caba9e5c1af4ae19fa87f900cd46c43);
+        
+    
+        var popup_2571091cd71141c5b3d4b5708e1d7b1d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f8bbe300c84243e59e5a3722bd8fa1ca = $(`<div id="html_f8bbe300c84243e59e5a3722bd8fa1ca" style="width: 100.0%; height: 100.0%;"><b>大阪市<br />牛: 9225.6<br />豚: 18455.8<br />鶏: 17009.6</b></div>`)[0];
+            popup_2571091cd71141c5b3d4b5708e1d7b1d.setContent(html_f8bbe300c84243e59e5a3722bd8fa1ca);
+        
+
+        marker_f9660d6fd2544b949718f893ba42327e.bindPopup(popup_2571091cd71141c5b3d4b5708e1d7b1d)
+        ;
+
+        
+    
+    
+            var marker_d95cbd5f0c39491e843fb891128f9a1c = L.marker(
+                [34.685064000000004, 135.80483],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_501b42c9a76c4c20a1557e087cdf18f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d95cbd5f0c39491e843fb891128f9a1c.setIcon(icon_501b42c9a76c4c20a1557e087cdf18f7);
+        
+    
+        var popup_6511311d5260486f9bf1b423d465782e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a44f3a52968a4a79962444ee0b186061 = $(`<div id="html_a44f3a52968a4a79962444ee0b186061" style="width: 100.0%; height: 100.0%;"><b>奈良市<br />牛: 9472.2<br />豚: 19289.2<br />鶏: 16926.8</b></div>`)[0];
+            popup_6511311d5260486f9bf1b423d465782e.setContent(html_a44f3a52968a4a79962444ee0b186061);
+        
+
+        marker_d95cbd5f0c39491e843fb891128f9a1c.bindPopup(popup_6511311d5260486f9bf1b423d465782e)
+        ;
+
+        
+    
+    
+            var marker_11b59f88f10d4b9bbdbd187692cde135 = L.marker(
+                [36.55519, 139.882668],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_321dd4e90404415aaf1f4ea1fc7b05d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_11b59f88f10d4b9bbdbd187692cde135.setIcon(icon_321dd4e90404415aaf1f4ea1fc7b05d7);
+        
+    
+        var popup_a875e8c61bee4358a0c40acc127176b1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c281139ce3004f20bf8234d5a95ba217 = $(`<div id="html_c281139ce3004f20bf8234d5a95ba217" style="width: 100.0%; height: 100.0%;"><b>宇都宮市<br />牛: 4980.0<br />豚: 19950.2<br />鶏: 13896.8</b></div>`)[0];
+            popup_a875e8c61bee4358a0c40acc127176b1.setContent(html_c281139ce3004f20bf8234d5a95ba217);
+        
+
+        marker_11b59f88f10d4b9bbdbd187692cde135.bindPopup(popup_a875e8c61bee4358a0c40acc127176b1)
+        ;
+
+        
+    
+    
+            var marker_428fa26f99ef49ca8143b0eb780a3595 = L.marker(
+                [31.90767, 131.420197],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_609c25b852514a508eabf6013b90f885 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_428fa26f99ef49ca8143b0eb780a3595.setIcon(icon_609c25b852514a508eabf6013b90f885);
+        
+    
+        var popup_aeb11a851e134cc38c0b313797fd5c03 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_18d3ea68f4c442b9b17be7bbc3a4884d = $(`<div id="html_18d3ea68f4c442b9b17be7bbc3a4884d" style="width: 100.0%; height: 100.0%;"><b>宮崎市<br />牛: 6582.6<br />豚: 18325.0<br />鶏: 19175.4</b></div>`)[0];
+            popup_aeb11a851e134cc38c0b313797fd5c03.setContent(html_18d3ea68f4c442b9b17be7bbc3a4884d);
+        
+
+        marker_428fa26f99ef49ca8143b0eb780a3595.bindPopup(popup_aeb11a851e134cc38c0b313797fd5c03)
+        ;
+
+        
+    
+    
+            var marker_e3d244b7965b45bcb72e869fa0ffe367 = L.marker(
+                [36.695801, 137.213618],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_cb1b2bd303c5412abea84552db4e0b23 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e3d244b7965b45bcb72e869fa0ffe367.setIcon(icon_cb1b2bd303c5412abea84552db4e0b23);
+        
+    
+        var popup_ba076e75f2e4459688dc746d8ac8faef = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5209b922e3b1454080f00f4d6eff640c = $(`<div id="html_5209b922e3b1454080f00f4d6eff640c" style="width: 100.0%; height: 100.0%;"><b>富山市<br />牛: 6205.8<br />豚: 20117.2<br />鶏: 13153.2</b></div>`)[0];
+            popup_ba076e75f2e4459688dc746d8ac8faef.setContent(html_5209b922e3b1454080f00f4d6eff640c);
+        
+
+        marker_e3d244b7965b45bcb72e869fa0ffe367.bindPopup(popup_ba076e75f2e4459688dc746d8ac8faef)
+        ;
+
+        
+    
+    
+            var marker_2edd46af57d54f3db4f65e68c4e391aa = L.marker(
+                [34.178332, 131.473901],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_7d33fc94cc0a46a1aad1bdd8585b0d36 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2edd46af57d54f3db4f65e68c4e391aa.setIcon(icon_7d33fc94cc0a46a1aad1bdd8585b0d36);
+        
+    
+        var popup_47d6624c816e484c8b474a2d34f85eb8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_20ddb9843ef846ffb29bc01ee6d51640 = $(`<div id="html_20ddb9843ef846ffb29bc01ee6d51640" style="width: 100.0%; height: 100.0%;"><b>山口市<br />牛: 8635.8<br />豚: 17978.4<br />鶏: 19230.0</b></div>`)[0];
+            popup_47d6624c816e484c8b474a2d34f85eb8.setContent(html_20ddb9843ef846ffb29bc01ee6d51640);
+        
+
+        marker_2edd46af57d54f3db4f65e68c4e391aa.bindPopup(popup_47d6624c816e484c8b474a2d34f85eb8)
+        ;
+
+        
+    
+    
+            var marker_04f75911298249dc9bc1971b619746d7 = L.marker(
+                [38.255429, 140.339435],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_7ac5a1eba9154e5aac1098753e562689 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_04f75911298249dc9bc1971b619746d7.setIcon(icon_7ac5a1eba9154e5aac1098753e562689);
+        
+    
+        var popup_13104869c91141508b921d33c6e8d64c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2627f2a7b72a46db98cad0cfc5a04733 = $(`<div id="html_2627f2a7b72a46db98cad0cfc5a04733" style="width: 100.0%; height: 100.0%;"><b>山形市<br />牛: 7722.8<br />豚: 20940.6<br />鶏: 14658.0</b></div>`)[0];
+            popup_13104869c91141508b921d33c6e8d64c.setContent(html_2627f2a7b72a46db98cad0cfc5a04733);
+        
+
+        marker_04f75911298249dc9bc1971b619746d7.bindPopup(popup_13104869c91141508b921d33c6e8d64c)
+        ;
+
+        
+    
+    
+            var marker_d27b95d1dbe94ee692b1c345786840dd = L.marker(
+                [35.423362, 136.76080100000001],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_e9a277420fd64115ac358fe05da1068b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d27b95d1dbe94ee692b1c345786840dd.setIcon(icon_e9a277420fd64115ac358fe05da1068b);
+        
+    
+        var popup_a1f2ee78e96e46c694f6cc2504380f89 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8f48683b150e404983d333fab22d5490 = $(`<div id="html_8f48683b150e404983d333fab22d5490" style="width: 100.0%; height: 100.0%;"><b>岐阜市<br />牛: 6367.6<br />豚: 18487.2<br />鶏: 14795.6</b></div>`)[0];
+            popup_a1f2ee78e96e46c694f6cc2504380f89.setContent(html_8f48683b150e404983d333fab22d5490);
+        
+
+        marker_d27b95d1dbe94ee692b1c345786840dd.bindPopup(popup_a1f2ee78e96e46c694f6cc2504380f89)
+        ;
+
+        
+    
+    
+            var marker_d0a15c7542714c729bab5bbaca2f1c70 = L.marker(
+                [34.655093, 133.91981299999998],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_2845db1106744e24b0b43f306819d5e8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d0a15c7542714c729bab5bbaca2f1c70.setIcon(icon_2845db1106744e24b0b43f306819d5e8);
+        
+    
+        var popup_ce099a6441ae4d6b80ba4fc3c2a30757 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0eab02b70d284a878fd8402a01271b62 = $(`<div id="html_0eab02b70d284a878fd8402a01271b62" style="width: 100.0%; height: 100.0%;"><b>岡山市<br />牛: 8308.6<br />豚: 20179.6<br />鶏: 18768.4</b></div>`)[0];
+            popup_ce099a6441ae4d6b80ba4fc3c2a30757.setContent(html_0eab02b70d284a878fd8402a01271b62);
+        
+
+        marker_d0a15c7542714c729bab5bbaca2f1c70.bindPopup(popup_ce099a6441ae4d6b80ba4fc3c2a30757)
+        ;
+
+        
+    
+    
+            var marker_e8149fdd50de465191733bf0db16e2ef = L.marker(
+                [35.530811, 139.70302900000002],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_233e44bf602e43338b62ec2c63ab7edd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e8149fdd50de465191733bf0db16e2ef.setIcon(icon_233e44bf602e43338b62ec2c63ab7edd);
+        
+    
+        var popup_a5a3d25595db40b0b33e4f926498066c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0c3d80f21ea24993887e832e65478581 = $(`<div id="html_0c3d80f21ea24993887e832e65478581" style="width: 100.0%; height: 100.0%;"><b>川崎市<br />牛: 6110.0<br />豚: 23368.4<br />鶏: 16296.8</b></div>`)[0];
+            popup_a5a3d25595db40b0b33e4f926498066c.setContent(html_0c3d80f21ea24993887e832e65478581);
+        
+
+        marker_e8149fdd50de465191733bf0db16e2ef.bindPopup(popup_a5a3d25595db40b0b33e4f926498066c)
+        ;
+
+        
+    
+    
+            var marker_c4164ac4952f448f8f50d4566a766eaf = L.marker(
+                [34.385216, 132.45537],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_c94dbd3a619447019ed56d2643cf04f0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c4164ac4952f448f8f50d4566a766eaf.setIcon(icon_c94dbd3a619447019ed56d2643cf04f0);
+        
+    
+        var popup_a5a75b8dd8e34db1b07352d88a6d6c1b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0c1ae58af74143908edafebf72790b47 = $(`<div id="html_0c1ae58af74143908edafebf72790b47" style="width: 100.0%; height: 100.0%;"><b>広島市<br />牛: 9109.0<br />豚: 20548.0<br />鶏: 19393.2</b></div>`)[0];
+            popup_a5a75b8dd8e34db1b07352d88a6d6c1b.setContent(html_0c1ae58af74143908edafebf72790b47);
+        
+
+        marker_c4164ac4952f448f8f50d4566a766eaf.bindPopup(popup_a5a75b8dd8e34db1b07352d88a6d6c1b)
+        ;
+
+        
+    
+    
+            var marker_da1bfd72f6ab496d811b3c03f6afbe9e = L.marker(
+                [34.070172, 134.55473500000002],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_00cbbf06b9bf42aa9d68584b7679f1a0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_da1bfd72f6ab496d811b3c03f6afbe9e.setIcon(icon_00cbbf06b9bf42aa9d68584b7679f1a0);
+        
+    
+        var popup_f172f81e20e849a9b9c20dd6fca94d1e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d8c1a60e8c28421da19435d3b297bcf4 = $(`<div id="html_d8c1a60e8c28421da19435d3b297bcf4" style="width: 100.0%; height: 100.0%;"><b>徳島市<br />牛: 8214.8<br />豚: 15863.0<br />鶏: 16200.0</b></div>`)[0];
+            popup_f172f81e20e849a9b9c20dd6fca94d1e.setContent(html_d8c1a60e8c28421da19435d3b297bcf4);
+        
+
+        marker_da1bfd72f6ab496d811b3c03f6afbe9e.bindPopup(popup_f172f81e20e849a9b9c20dd6fca94d1e)
+        ;
+
+        
+    
+    
+            var marker_be054d94aacc4445b6e0526aa9701dc7 = L.marker(
+                [37.916098, 139.036363],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_acf3a57823b94e9da99805b4023060cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_be054d94aacc4445b6e0526aa9701dc7.setIcon(icon_acf3a57823b94e9da99805b4023060cc);
+        
+    
+        var popup_da123685e8d44bc79a3f024a1eb723ed = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8271fe02f37c44248ab2fdbd47160e96 = $(`<div id="html_8271fe02f37c44248ab2fdbd47160e96" style="width: 100.0%; height: 100.0%;"><b>新潟市<br />牛: 3529.2<br />豚: 23952.2<br />鶏: 14371.4</b></div>`)[0];
+            popup_da123685e8d44bc79a3f024a1eb723ed.setContent(html_8271fe02f37c44248ab2fdbd47160e96);
+        
+
+        marker_be054d94aacc4445b6e0526aa9701dc7.bindPopup(popup_da123685e8d44bc79a3f024a1eb723ed)
+        ;
+
+        
+    
+    
+            var marker_2ad40c8421214c3e9ea50b24d7a21c86 = L.marker(
+                [43.061945, 141.35439499999998],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_8b8d5c48fd6748dda4b13b7827c460b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2ad40c8421214c3e9ea50b24d7a21c86.setIcon(icon_8b8d5c48fd6748dda4b13b7827c460b3);
+        
+    
+        var popup_76d674c476d747e19a31612a33ab6aa1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8fb09b5ea7a447e1a1a07e215d3a824a = $(`<div id="html_8fb09b5ea7a447e1a1a07e215d3a824a" style="width: 100.0%; height: 100.0%;"><b>札幌市<br />牛: 4536.8<br />豚: 23820.8<br />鶏: 17242.8</b></div>`)[0];
+            popup_76d674c476d747e19a31612a33ab6aa1.setContent(html_8fb09b5ea7a447e1a1a07e215d3a824a);
+        
+
+        marker_2ad40c8421214c3e9ea50b24d7a21c86.bindPopup(popup_76d674c476d747e19a31612a33ab6aa1)
+        ;
+
+        
+    
+    
+            var marker_210c3840ffbb4875af0796862d8c56a8 = L.marker(
+                [35.694003, 139.753634],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_8dd7f3ae4a354a2793148909478dcf5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_210c3840ffbb4875af0796862d8c56a8.setIcon(icon_8dd7f3ae4a354a2793148909478dcf5c);
+        
+    
+        var popup_01a7096e16f145839902b39c8ff30d09 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fd034d48037a400b9c000c669a938329 = $(`<div id="html_fd034d48037a400b9c000c669a938329" style="width: 100.0%; height: 100.0%;"><b>東京都区部<br />牛: 6506.6<br />豚: 20391.0<br />鶏: 15132.2</b></div>`)[0];
+            popup_01a7096e16f145839902b39c8ff30d09.setContent(html_fd034d48037a400b9c000c669a938329);
+        
+
+        marker_210c3840ffbb4875af0796862d8c56a8.bindPopup(popup_01a7096e16f145839902b39c8ff30d09)
+        ;
+
+        
+    
+    
+            var marker_dba8ba8b905e44b4a66a47b24f4df5e8 = L.marker(
+                [33.839201, 132.765575],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_cd646dd8e2384d85b53b50a1495a36e7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_dba8ba8b905e44b4a66a47b24f4df5e8.setIcon(icon_cd646dd8e2384d85b53b50a1495a36e7);
+        
+    
+        var popup_942f13b0240040fa8d2eaaf5f453b6c6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_82c689696d0546c78d310e5790141e33 = $(`<div id="html_82c689696d0546c78d310e5790141e33" style="width: 100.0%; height: 100.0%;"><b>松山市<br />牛: 9373.6<br />豚: 17995.0<br />鶏: 16485.0</b></div>`)[0];
+            popup_942f13b0240040fa8d2eaaf5f453b6c6.setContent(html_82c689696d0546c78d310e5790141e33);
+        
+
+        marker_dba8ba8b905e44b4a66a47b24f4df5e8.bindPopup(popup_942f13b0240040fa8d2eaaf5f453b6c6)
+        ;
+
+        
+    
+    
+            var marker_847fbd55667a4a85bf79b3f008cf8002 = L.marker(
+                [35.468101000000004, 133.04853],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_65fc057e432d4dbab6148746d6d13903 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_847fbd55667a4a85bf79b3f008cf8002.setIcon(icon_65fc057e432d4dbab6148746d6d13903);
+        
+    
+        var popup_b34ad5b39dd9448484f13d99a47fb77d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0be573734e0042ce8d7bf398f6594a01 = $(`<div id="html_0be573734e0042ce8d7bf398f6594a01" style="width: 100.0%; height: 100.0%;"><b>松江市<br />牛: 5675.8<br />豚: 19171.8<br />鶏: 17971.4</b></div>`)[0];
+            popup_b34ad5b39dd9448484f13d99a47fb77d.setContent(html_0be573734e0042ce8d7bf398f6594a01);
+        
+
+        marker_847fbd55667a4a85bf79b3f008cf8002.bindPopup(popup_b34ad5b39dd9448484f13d99a47fb77d)
+        ;
+
+        
+    
+    
+            var marker_38753701b1984027bf63b8d22da52228 = L.marker(
+                [35.444155, 139.637981],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_97071f8ff0ab4a2ba4f99b091e319554 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_38753701b1984027bf63b8d22da52228.setIcon(icon_97071f8ff0ab4a2ba4f99b091e319554);
+        
+    
+        var popup_7f90bdf8c3144761a74e7a50ec387c4b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9b009682b2194750bc8361d1b9ca8abe = $(`<div id="html_9b009682b2194750bc8361d1b9ca8abe" style="width: 100.0%; height: 100.0%;"><b>横浜市<br />牛: 6432.4<br />豚: 22263.6<br />鶏: 15592.4</b></div>`)[0];
+            popup_7f90bdf8c3144761a74e7a50ec387c4b.setContent(html_9b009682b2194750bc8361d1b9ca8abe);
+        
+
+        marker_38753701b1984027bf63b8d22da52228.bindPopup(popup_7f90bdf8c3144761a74e7a50ec387c4b)
+        ;
+
+        
+    
+    
+            var marker_cbded2f10ac64cae8b5bec809ae55dc5 = L.marker(
+                [36.365725, 140.471454],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_0d082babd4ee4e24bae32a0fbdb3f6ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cbded2f10ac64cae8b5bec809ae55dc5.setIcon(icon_0d082babd4ee4e24bae32a0fbdb3f6ac);
+        
+    
+        var popup_c7217d8975ce4b15b3629d17added4a3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d03d3acdf4d743198bac4170b331bd59 = $(`<div id="html_d03d3acdf4d743198bac4170b331bd59" style="width: 100.0%; height: 100.0%;"><b>水戸市<br />牛: 3999.2<br />豚: 19631.4<br />鶏: 13330.4</b></div>`)[0];
+            popup_c7217d8975ce4b15b3629d17added4a3.setContent(html_d03d3acdf4d743198bac4170b331bd59);
+        
+
+        marker_cbded2f10ac64cae8b5bec809ae55dc5.bindPopup(popup_c7217d8975ce4b15b3629d17added4a3)
+        ;
+
+        
+    
+    
+            var marker_5157175d5e194e01acd8444525938f0d = L.marker(
+                [34.718576, 136.505511],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_bede27f7861e4c5d90ad6cae69c3289d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5157175d5e194e01acd8444525938f0d.setIcon(icon_bede27f7861e4c5d90ad6cae69c3289d);
+        
+    
+        var popup_bb8f3e9ed61d4d768d83cb43476bf340 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f03f61a5f1c7470c9f1ad51fc2318f55 = $(`<div id="html_f03f61a5f1c7470c9f1ad51fc2318f55" style="width: 100.0%; height: 100.0%;"><b>津市<br />牛: 7863.4<br />豚: 17936.2<br />鶏: 16887.0</b></div>`)[0];
+            popup_bb8f3e9ed61d4d768d83cb43476bf340.setContent(html_f03f61a5f1c7470c9f1ad51fc2318f55);
+        
+
+        marker_5157175d5e194e01acd8444525938f0d.bindPopup(popup_bb8f3e9ed61d4d768d83cb43476bf340)
+        ;
+
+        
+    
+    
+            var marker_6e4f8578c0bc47349834fd810deed564 = L.marker(
+                [34.710837, 137.72675900000002],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_0563a0cf4ad1405f941019e0e1d34533 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6e4f8578c0bc47349834fd810deed564.setIcon(icon_0563a0cf4ad1405f941019e0e1d34533);
+        
+    
+        var popup_f1c8c0527c1e427892fc7567a515f4de = L.popup({"maxWidth": "100%"});
+
+        
+            var html_41ba9e801916424fad76482858cdd1d0 = $(`<div id="html_41ba9e801916424fad76482858cdd1d0" style="width: 100.0%; height: 100.0%;"><b>浜松市<br />牛: 3815.0<br />豚: 22395.0<br />鶏: 13826.0</b></div>`)[0];
+            popup_f1c8c0527c1e427892fc7567a515f4de.setContent(html_41ba9e801916424fad76482858cdd1d0);
+        
+
+        marker_6e4f8578c0bc47349834fd810deed564.bindPopup(popup_f1c8c0527c1e427892fc7567a515f4de)
+        ;
+
+        
+    
+    
+            var marker_432dcad26a784780a7d7fed40a68cac7 = L.marker(
+                [32.803233, 130.708135],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_c5e45aafc5cc48aeafa742ce16fa1d49 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_432dcad26a784780a7d7fed40a68cac7.setIcon(icon_c5e45aafc5cc48aeafa742ce16fa1d49);
+        
+    
+        var popup_05caaae545874e56b012936181a76459 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_804b64de5efb4b078b5d8c48bd187f8e = $(`<div id="html_804b64de5efb4b078b5d8c48bd187f8e" style="width: 100.0%; height: 100.0%;"><b>熊本市<br />牛: 8376.2<br />豚: 18433.0<br />鶏: 19447.6</b></div>`)[0];
+            popup_05caaae545874e56b012936181a76459.setContent(html_804b64de5efb4b078b5d8c48bd187f8e);
+        
+
+        marker_432dcad26a784780a7d7fed40a68cac7.bindPopup(popup_05caaae545874e56b012936181a76459)
+        ;
+
+        
+    
+    
+            var marker_3bda735d966847c18da0bcdc2121c312 = L.marker(
+                [35.662025, 138.56825],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_d75ee53759de42599f142e69555380a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3bda735d966847c18da0bcdc2121c312.setIcon(icon_d75ee53759de42599f142e69555380a4);
+        
+    
+        var popup_4e6e5ee7977f40d5a20d75b362a01905 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d9373c7242d14dfdb1c61ab5f59bc3bd = $(`<div id="html_d9373c7242d14dfdb1c61ab5f59bc3bd" style="width: 100.0%; height: 100.0%;"><b>甲府市<br />牛: 4575.2<br />豚: 20770.4<br />鶏: 13438.6</b></div>`)[0];
+            popup_4e6e5ee7977f40d5a20d75b362a01905.setContent(html_d9373c7242d14dfdb1c61ab5f59bc3bd);
+        
+
+        marker_3bda735d966847c18da0bcdc2121c312.bindPopup(popup_4e6e5ee7977f40d5a20d75b362a01905)
+        ;
+
+        
+    
+    
+            var marker_9c0c2d8435db4a3ba698c698084a4273 = L.marker(
+                [39.701980999999996, 141.154259],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_8ca4c731cccf41b5ac83ef22234988d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9c0c2d8435db4a3ba698c698084a4273.setIcon(icon_8ca4c731cccf41b5ac83ef22234988d6);
+        
+    
+        var popup_3e9e054864a144848302b2f05272b4d9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_67ccc3ae8bb344048fddcbf70e55fc49 = $(`<div id="html_67ccc3ae8bb344048fddcbf70e55fc49" style="width: 100.0%; height: 100.0%;"><b>盛岡市<br />牛: 3777.6<br />豚: 21205.6<br />鶏: 14609.0</b></div>`)[0];
+            popup_3e9e054864a144848302b2f05272b4d9.setContent(html_67ccc3ae8bb344048fddcbf70e55fc49);
+        
+
+        marker_9c0c2d8435db4a3ba698c698084a4273.bindPopup(popup_3e9e054864a144848302b2f05272b4d9)
+        ;
+
+        
+    
+    
+            var marker_5d197c11f20b4cd7889529c41ba0dba1 = L.marker(
+                [35.571407, 139.37322],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_2854826df3b447ab81e1029369fa4b53 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5d197c11f20b4cd7889529c41ba0dba1.setIcon(icon_2854826df3b447ab81e1029369fa4b53);
+        
+    
+        var popup_3919a5132293403780e514a2dc4a3565 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_319e7d8420534d16b38e70bd6f069c1d = $(`<div id="html_319e7d8420534d16b38e70bd6f069c1d" style="width: 100.0%; height: 100.0%;"><b>相模原市<br />牛: 5947.2<br />豚: 24272.8<br />鶏: 17135.4</b></div>`)[0];
+            popup_3919a5132293403780e514a2dc4a3565.setContent(html_319e7d8420534d16b38e70bd6f069c1d);
+        
+
+        marker_5d197c11f20b4cd7889529c41ba0dba1.bindPopup(popup_3919a5132293403780e514a2dc4a3565)
+        ;
+
+        
+    
+    
+            var marker_7c7a8b53b26d4e05bb15f6e8429aab6f = L.marker(
+                [34.69011, 135.19546599999998],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_26987042a6df444faf30f4144e883427 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7c7a8b53b26d4e05bb15f6e8429aab6f.setIcon(icon_26987042a6df444faf30f4144e883427);
+        
+    
+        var popup_ec5f9e4720704909893bb5fc292d2525 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_61aded4dd0cd447f9c930b03fa219479 = $(`<div id="html_61aded4dd0cd447f9c930b03fa219479" style="width: 100.0%; height: 100.0%;"><b>神戸市<br />牛: 8462.2<br />豚: 17874.0<br />鶏: 17466.6</b></div>`)[0];
+            popup_ec5f9e4720704909893bb5fc292d2525.setContent(html_61aded4dd0cd447f9c930b03fa219479);
+        
+
+        marker_7c7a8b53b26d4e05bb15f6e8429aab6f.bindPopup(popup_ec5f9e4720704909893bb5fc292d2525)
+        ;
+
+        
+    
+    
+            var marker_91579d1aa92c401da845044b32ca3aa6 = L.marker(
+                [36.064189, 136.219374],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_7de85b77bf9b4762b022a3c26895caf6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_91579d1aa92c401da845044b32ca3aa6.setIcon(icon_7de85b77bf9b4762b022a3c26895caf6);
+        
+    
+        var popup_351cac218adb46bb9d1a8316f290629e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c63322292d704c9990d0aabf12283997 = $(`<div id="html_c63322292d704c9990d0aabf12283997" style="width: 100.0%; height: 100.0%;"><b>福井市<br />牛: 7610.0<br />豚: 16079.2<br />鶏: 13421.0</b></div>`)[0];
+            popup_351cac218adb46bb9d1a8316f290629e.setContent(html_c63322292d704c9990d0aabf12283997);
+        
+
+        marker_91579d1aa92c401da845044b32ca3aa6.bindPopup(popup_351cac218adb46bb9d1a8316f290629e)
+        ;
+
+        
+    
+    
+            var marker_74360d22ca6d42248f06a6ed1ebe46f1 = L.marker(
+                [33.590096, 130.401754],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_c42d45cdca084681860a2dd235bfa640 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_74360d22ca6d42248f06a6ed1ebe46f1.setIcon(icon_c42d45cdca084681860a2dd235bfa640);
+        
+    
+        var popup_35c14dbb844f4ace923c022219eb1154 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0bc9c220f5fc4779ae930727f60993be = $(`<div id="html_0bc9c220f5fc4779ae930727f60993be" style="width: 100.0%; height: 100.0%;"><b>福岡市<br />牛: 8085.0<br />豚: 20173.8<br />鶏: 20475.4</b></div>`)[0];
+            popup_35c14dbb844f4ace923c022219eb1154.setContent(html_0bc9c220f5fc4779ae930727f60993be);
+        
+
+        marker_74360d22ca6d42248f06a6ed1ebe46f1.bindPopup(popup_35c14dbb844f4ace923c022219eb1154)
+        ;
+
+        
+    
+    
+            var marker_c5a2709165b7436386734d4cbaac6ec2 = L.marker(
+                [37.760789, 140.47384399999999],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_a905d9477f474209891657cdfeae1788 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c5a2709165b7436386734d4cbaac6ec2.setIcon(icon_a905d9477f474209891657cdfeae1788);
+        
+    
+        var popup_66b2afc9ba1c4e2ca5fae0b047f23cd8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_27a74397ceac453ebda69d7df59dae35 = $(`<div id="html_27a74397ceac453ebda69d7df59dae35" style="width: 100.0%; height: 100.0%;"><b>福島市<br />牛: 3885.2<br />豚: 22639.0<br />鶏: 12946.8</b></div>`)[0];
+            popup_66b2afc9ba1c4e2ca5fae0b047f23cd8.setContent(html_27a74397ceac453ebda69d7df59dae35);
+        
+
+        marker_c5a2709165b7436386734d4cbaac6ec2.bindPopup(popup_66b2afc9ba1c4e2ca5fae0b047f23cd8)
+        ;
+
+        
+    
+    
+            var marker_410f8032300a4438b8c8e592010a9750 = L.marker(
+                [39.719724, 140.102417],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_2004f7c248604b6c8787d4040851b1ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_410f8032300a4438b8c8e592010a9750.setIcon(icon_2004f7c248604b6c8787d4040851b1ef);
+        
+    
+        var popup_ddc04e025ada4a1191b1293bbd64020b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_38b41a47b6a7469f832fdef31cef30a6 = $(`<div id="html_38b41a47b6a7469f832fdef31cef30a6" style="width: 100.0%; height: 100.0%;"><b>秋田市<br />牛: 4624.4<br />豚: 21717.8<br />鶏: 15658.8</b></div>`)[0];
+            popup_ddc04e025ada4a1191b1293bbd64020b.setContent(html_38b41a47b6a7469f832fdef31cef30a6);
+        
+
+        marker_410f8032300a4438b8c8e592010a9750.bindPopup(popup_ddc04e025ada4a1191b1293bbd64020b)
+        ;
+
+        
+    
+    
+            var marker_37f7e64513f445899729606aee564e1c = L.marker(
+                [26.212295, 127.67921799999999],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_233bc3df2fb44c05a7eb41208de36e8b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_37f7e64513f445899729606aee564e1c.setIcon(icon_233bc3df2fb44c05a7eb41208de36e8b);
+        
+    
+        var popup_3fa9efa6374a4c05a1c4f91d7b6daabe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fa6eeafd8b4445b78137e77fdeb3cdb3 = $(`<div id="html_fa6eeafd8b4445b78137e77fdeb3cdb3" style="width: 100.0%; height: 100.0%;"><b>那覇市<br />牛: 6443.6<br />豚: 19237.4<br />鶏: 12305.0</b></div>`)[0];
+            popup_3fa9efa6374a4c05a1c4f91d7b6daabe.setContent(html_fa6eeafd8b4445b78137e77fdeb3cdb3);
+        
+
+        marker_37f7e64513f445899729606aee564e1c.bindPopup(popup_3fa9efa6374a4c05a1c4f91d7b6daabe)
+        ;
+
+        
+    
+    
+            var marker_c789d6eac6e84f9eb0f0a1268f813f0a = L.marker(
+                [36.560944, 136.65676299999998],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_28ecfd29f4674b36bbbf03050c37c6a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c789d6eac6e84f9eb0f0a1268f813f0a.setIcon(icon_28ecfd29f4674b36bbbf03050c37c6a1);
+        
+    
+        var popup_0e44008357b74beaa52c9e01102dafe1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_79f13b54142f4ddca80992c989d0b63f = $(`<div id="html_79f13b54142f4ddca80992c989d0b63f" style="width: 100.0%; height: 100.0%;"><b>金沢市<br />牛: 6749.2<br />豚: 19542.2<br />鶏: 13477.8</b></div>`)[0];
+            popup_0e44008357b74beaa52c9e01102dafe1.setContent(html_79f13b54142f4ddca80992c989d0b63f);
+        
+
+        marker_c789d6eac6e84f9eb0f0a1268f813f0a.bindPopup(popup_0e44008357b74beaa52c9e01102dafe1)
+        ;
+
+        
+    
+    
+            var marker_ba12b69a71a54c26a88eb9313d3f6c89 = L.marker(
+                [32.750252, 129.877792],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_c571e220977a434297673ea64339eef5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ba12b69a71a54c26a88eb9313d3f6c89.setIcon(icon_c571e220977a434297673ea64339eef5);
+        
+    
+        var popup_bec35f08ba3e4aa9a8ffc748a72593cb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7b3737f1d9cd4fa490607d8fc6ee25d7 = $(`<div id="html_7b3737f1d9cd4fa490607d8fc6ee25d7" style="width: 100.0%; height: 100.0%;"><b>長崎市<br />牛: 7360.0<br />豚: 17158.8<br />鶏: 17453.0</b></div>`)[0];
+            popup_bec35f08ba3e4aa9a8ffc748a72593cb.setContent(html_7b3737f1d9cd4fa490607d8fc6ee25d7);
+        
+
+        marker_ba12b69a71a54c26a88eb9313d3f6c89.bindPopup(popup_bec35f08ba3e4aa9a8ffc748a72593cb)
+        ;
+
+        
+    
+    
+            var marker_265c811dd9a24fbfa161fc981c1dc8c8 = L.marker(
+                [36.648533, 138.19429499999998],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_c3a007ad88dc415887dc649e907f514d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_265c811dd9a24fbfa161fc981c1dc8c8.setIcon(icon_c3a007ad88dc415887dc649e907f514d);
+        
+    
+        var popup_0167fba869874fe4803b5f7c8ffb7bc9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dab9836a69654bf8b8631f22d00fd1ff = $(`<div id="html_dab9836a69654bf8b8631f22d00fd1ff" style="width: 100.0%; height: 100.0%;"><b>長野市<br />牛: 3470.4<br />豚: 20001.4<br />鶏: 12725.4</b></div>`)[0];
+            popup_0167fba869874fe4803b5f7c8ffb7bc9.setContent(html_dab9836a69654bf8b8631f22d00fd1ff);
+        
+
+        marker_265c811dd9a24fbfa161fc981c1dc8c8.bindPopup(popup_0167fba869874fe4803b5f7c8ffb7bc9)
+        ;
+
+        
+    
+    
+            var marker_11a9b8bb2b144e51864fa15e1df06878 = L.marker(
+                [40.822115999999994, 140.747587],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_5f46d57bdebb47fd9e314b6f83fdd646 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_11a9b8bb2b144e51864fa15e1df06878.setIcon(icon_5f46d57bdebb47fd9e314b6f83fdd646);
+        
+    
+        var popup_894562f9073d4ddbbe49e8cce05c3a4b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5e62663db56348469909daaf36941842 = $(`<div id="html_5e62663db56348469909daaf36941842" style="width: 100.0%; height: 100.0%;"><b>青森市<br />牛: 5717.0<br />豚: 23594.4<br />鶏: 15418.0</b></div>`)[0];
+            popup_894562f9073d4ddbbe49e8cce05c3a4b.setContent(html_5e62663db56348469909daaf36941842);
+        
+
+        marker_11a9b8bb2b144e51864fa15e1df06878.bindPopup(popup_894562f9073d4ddbbe49e8cce05c3a4b)
+        ;
+
+        
+    
+    
+            var marker_fddb9deb0c224c72af9c7104c24d34eb = L.marker(
+                [34.975045, 138.383717],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_2993c8c1828344bdba5e8c3d9a16bc3a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fddb9deb0c224c72af9c7104c24d34eb.setIcon(icon_2993c8c1828344bdba5e8c3d9a16bc3a);
+        
+    
+        var popup_d844a34971f04e6da4b9b20bf78a006b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4c96a9f9bb114c11a67183dc0f414900 = $(`<div id="html_4c96a9f9bb114c11a67183dc0f414900" style="width: 100.0%; height: 100.0%;"><b>静岡市<br />牛: 5163.2<br />豚: 23261.8<br />鶏: 15574.6</b></div>`)[0];
+            popup_d844a34971f04e6da4b9b20bf78a006b.setContent(html_4c96a9f9bb114c11a67183dc0f414900);
+        
+
+        marker_fddb9deb0c224c72af9c7104c24d34eb.bindPopup(popup_d844a34971f04e6da4b9b20bf78a006b)
+        ;
+
+        
+    
+    
+            var marker_36fc3dba750c4c94a28244ed40c83f2d = L.marker(
+                [34.342797999999995, 134.04666799999998],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_90faca0e7440451bbed372f7566f77a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_36fc3dba750c4c94a28244ed40c83f2d.setIcon(icon_90faca0e7440451bbed372f7566f77a6);
+        
+    
+        var popup_0405e0e0e7dd46b5a799ecd826b0638b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3a7298bcc2494574889307c07802eda1 = $(`<div id="html_3a7298bcc2494574889307c07802eda1" style="width: 100.0%; height: 100.0%;"><b>高松市<br />牛: 7979.0<br />豚: 17055.4<br />鶏: 16992.4</b></div>`)[0];
+            popup_0405e0e0e7dd46b5a799ecd826b0638b.setContent(html_3a7298bcc2494574889307c07802eda1);
+        
+
+        marker_36fc3dba750c4c94a28244ed40c83f2d.bindPopup(popup_0405e0e0e7dd46b5a799ecd826b0638b)
+        ;
+
+        
+    
+    
+            var marker_13169ac574934f6c9b921bf5e3b0cb55 = L.marker(
+                [33.558781, 133.531337],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_82e87ca498d3453fa82b96d3f17535e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_13169ac574934f6c9b921bf5e3b0cb55.setIcon(icon_82e87ca498d3453fa82b96d3f17535e9);
+        
+    
+        var popup_8822be2a1ca7405e9ebf315fb96769e1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7f5cd14307b44e558861d1ef3d7d845b = $(`<div id="html_7f5cd14307b44e558861d1ef3d7d845b" style="width: 100.0%; height: 100.0%;"><b>高知市<br />牛: 6675.6<br />豚: 16672.6<br />鶏: 16684.4</b></div>`)[0];
+            popup_8822be2a1ca7405e9ebf315fb96769e1.setContent(html_7f5cd14307b44e558861d1ef3d7d845b);
+        
+
+        marker_13169ac574934f6c9b921bf5e3b0cb55.bindPopup(popup_8822be2a1ca7405e9ebf315fb96769e1)
+        ;
+
+        
+    
+    
+            var marker_9d63945dddde473fa0a6568bb2977e52 = L.marker(
+                [35.501037, 134.235175],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_4955b5fd28f846bcb6ba7727d6df8b4d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9d63945dddde473fa0a6568bb2977e52.setIcon(icon_4955b5fd28f846bcb6ba7727d6df8b4d);
+        
+    
+        var popup_647697a160a646ebbe92d8d568ff68c6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c4ef18c7872241e192621e136d9aa129 = $(`<div id="html_c4ef18c7872241e192621e136d9aa129" style="width: 100.0%; height: 100.0%;"><b>鳥取市<br />牛: 6774.0<br />豚: 18765.8<br />鶏: 17769.6</b></div>`)[0];
+            popup_647697a160a646ebbe92d8d568ff68c6.setContent(html_c4ef18c7872241e192621e136d9aa129);
+        
+
+        marker_9d63945dddde473fa0a6568bb2977e52.bindPopup(popup_647697a160a646ebbe92d8d568ff68c6)
+        ;
+
+        
+    
+    
+            var marker_56992186878049689fc882f8bb38a183 = L.marker(
+                [31.596791999999997, 130.55733500000002],
+                {}
+            ).addTo(map_41b15e8a0f33465c85eaa5a2b17bcb86);
+        
+    
+            var icon_70d6c9c8b00943f58f19178f95eb7df3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_56992186878049689fc882f8bb38a183.setIcon(icon_70d6c9c8b00943f58f19178f95eb7df3);
+        
+    
+        var popup_4a8cd037d9034ce2a27eb2a86250bd83 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0dd9c44324e94d6aaf07a0bb408510ac = $(`<div id="html_0dd9c44324e94d6aaf07a0bb408510ac" style="width: 100.0%; height: 100.0%;"><b>鹿児島市<br />牛: 5756.0<br />豚: 18876.6<br />鶏: 18315.4</b></div>`)[0];
+            popup_4a8cd037d9034ce2a27eb2a86250bd83.setContent(html_0dd9c44324e94d6aaf07a0bb408510ac);
+        
+
+        marker_56992186878049689fc882f8bb38a183.bindPopup(popup_4a8cd037d9034ce2a27eb2a86250bd83)
+        ;
+
+        
+    
+</script>

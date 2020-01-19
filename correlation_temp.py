@@ -86,7 +86,9 @@ end_period = 201910
 df3 = df3[df3['yyyymm'].astype(int) >= beg_period]
 df3 = df3[df3['yyyymm'].astype(int) <= end_period]
 
-# % 散布図
+df3.to_csv(DSTDIR + '/{}-df3.csv'.format(fname_prefix_base), encoding=encoding)
+
+# %% 散布図
 def DarkPair():
     """ 少し色を濃くする """
     darkers = [10]  # 濃くする index
@@ -161,6 +163,8 @@ with PdfPages(DSTDIR + '/corr-temp-all.pdf'.format(i)) as pdfall:
             plt.savefig(DSTDIR + '/{}.pdf'.format(fname_prefix), bbox_inches='tight')
             # plt.show()
             plt.pause(.01)
+
+# %%
 
 #%% Save summary
 df_summary = pd.DataFrame()
