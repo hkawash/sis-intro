@@ -41,6 +41,9 @@
 </tr>
 </table>
 
+### 重回帰 ([mult_regression.py](mult_regression.py))
+
+- チョコレート菓子と気温や年の関係（1回生後期「確率・統計」用）
 
 ### クラスタリング ([clustering.py](clustering.py))
 

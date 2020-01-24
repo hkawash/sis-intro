@@ -81,16 +81,17 @@ for i in range(icol_beg, icol_beg + num_itemcols):
 # 期間を指定
 # df3 = df3.query('2010 <= year <= 2019')
 # 10年分 (120カ月)
-beg_period = 200911
-end_period = 201910
+# beg_period = 200911
+# end_period = 201910
+beg_period = 200901
+end_period = 201812
 df3 = df3[df3['yyyymm'].astype(int) >= beg_period]
 df3 = df3[df3['yyyymm'].astype(int) <= end_period]
 
-df3.to_csv(DSTDIR + '/{}-df3.csv'.format(fname_prefix_base), encoding=encoding)
 
 # %% 散布図
-def DarkPair():
-    """ 少し色を濃くする """
+def DarkPaired():
+    """ 少し色を濃くしたPaired """
     darkers = [10]  # 濃くする index
     color_list = []
     cmap = cm.get_cmap('Paired')
@@ -119,6 +120,9 @@ if remove_month > 0:
 else:
     fname_prefix_base = 'corr-temp'
 
+# 別の解析用に保存しておく
+df3.to_csv(DSTDIR + '/{}-df3.csv'.format(fname_prefix_base), encoding=encoding)
+
 month = df3['month']
 
 with PdfPages(DSTDIR + '/corr-temp-all.pdf'.format(i)) as pdfall:
@@ -136,7 +140,7 @@ with PdfPages(DSTDIR + '/corr-temp-all.pdf'.format(i)) as pdfall:
         spearmanr_list.append(spearmanr)
 
         # sns.set_style('whitegrid')
-        ax = df3.plot(kind='scatter', x=x_name, y=y_name, c=month, cmap=DarkPair(), figsize=(8,6))
+        ax = df3.plot(kind='scatter', x=x_name, y=y_name, c=month, cmap=DarkPaired(), figsize=(8,6))
         ax.set_title("Pearson's r = {:.2f}".format(pearsonr[0]))
         plt.gca().spines['right'].set_visible(False)
         plt.gca().spines['top'].set_visible(False)
@@ -182,7 +186,9 @@ for pair in [(14, 11), (14, 13), (11, 13)]:
     print("y-axis: ", y_name)
     pearsonr = stats.pearsonr(df3[x_name], df3[y_name])
     spearmanr = stats.spearmanr(df3[x_name], df3[y_name])
-
+    print("spurious")
+    print("scipy.stats.pearsonr = {}".format(pearsonr))  # r, p-value
+    print("scipy.stats.spearmanr = {}".format(spearmanr))  # r, p-value
     ax = df3.plot(kind='scatter', x=x_name, y=y_name)
     # ax.set_title("Pearson's r = {:.2f}".format(pearsonr[0]))
     plt.gca().spines['right'].set_visible(False)
