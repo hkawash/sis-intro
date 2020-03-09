@@ -11,10 +11,12 @@ from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib import cm
 from matplotlib.colors import ListedColormap# %
 # import seaborn as sns
-# import re
+import re
+
+plt.rcParams["font.size"] = 14
 
 DSTDIR = 'fig_b'
-colored = True
+coloredmonth = True  # 月の色別: False とすると月の数字そのものをマーカーにしてプロット
 # remove_month = 2
 remove_month = 0  # 0 とすると除去しない
 
@@ -24,18 +26,33 @@ DATADIR = '../../data/eStat-purchase_JMA-temperature'  # パス指定
 skiprows = [0, 1, 2, 4]
 usecols = [0, 1, 4, 7, 11]  # 降水量だけ4列であとは3列ずつ
 encoding = 'shift_JIS'
-csvpath = DATADIR + '/jma-data.csv'
+csvpath = DATADIR + '/jma-data_20200103.csv'
 df1 = pd.read_csv(csvpath, skiprows=skiprows, usecols=usecols, encoding=encoding)
-# print(df1)
+df1 = df1.rename(columns={'日最高気温の平均(℃)' : '日最高気温の平均 (℃)'})
+print(df1)
+
 
 # % e-Stat の家計調査データ
 #  CSVダウンロード時にヘッダやコードなどは外してあるが，さらに列を適宜スキップ
+use_newdata = True
+if use_newdata:  # 2020.3月執筆時
+    csvpath = DATADIR + '/FEH_00200561_200308193711.csv' 
+    beg_period = 201001
+    end_period = 201912
+else:  # 2019講義および2020.1月執筆時
+    # csvpath = DATADIR + '/FEH_00200561_190526191958.csv'
+    csvpath = DATADIR + '/FEH_00200561_200103114104.csv' 
+    # 執筆 2019.1 用
+    beg_period = 200911
+    end_period = 201910
+    # 講義 2019年度 確率・統計（相関・回帰）
+    # beg_period = 200901
+    # end_period = 201812
+
 num_items = 16
 # usecols = [7] + [2*x + 9 for x in range(num_items)]
 usecols = [3] + [x + 6 for x in range(num_items)]
 # print(usecols)
-# csvpath = DATADIR + '/FEH_00200561_190526191958.csv'
-csvpath = DATADIR + '/FEH_00200561_200103114104.csv'
 # df2 = pd.read_csv(csvpath, thousands=',', skiprows=skiprows, usecols=usecols, encoding=encoding)
 df2 = pd.read_csv(csvpath, usecols=usecols, encoding=encoding)
 # print(df2)
@@ -74,17 +91,16 @@ num_itemcols = 16  # 処理対象列数
 num_addedcols = 3  # year, month, days
 for i in range(icol_beg, icol_beg + num_itemcols):
     col = df3.columns[i]
-    colnew = col.replace('円', '円/日')
+    coltmp = col.replace('【円】', ' (円/日)')
+    colnew = re.sub(r'^[0-9]+ ', '', coltmp)
     # df3[col] = df3[col].str.replace(',', '').astype(float)
     df3[colnew] = df3[col] / days
-
 # 期間を指定
 # df3 = df3.query('2010 <= year <= 2019')
 # 10年分 (120カ月)
-# beg_period = 200911
-# end_period = 201910
-beg_period = 200901
-end_period = 201812
+# beg_period: 開始月
+# end_period: 終了月
+# ファイルの始めの方で定義 (since 2020.3)
 df3 = df3[df3['yyyymm'].astype(int) >= beg_period]
 df3 = df3[df3['yyyymm'].astype(int) <= end_period]
 
@@ -104,8 +120,8 @@ def DarkPaired():
 
 #%
 target_itemlist = range(0, 15)
-separate_pdf_mono = [1, 5, 11, 12, 13, 14]
-separate_pdf_color = [4, 5, 12]
+separate_pdf_mono = [1, 5, 11, 12, 13, 14]  # 月を色付けしない
+separate_pdf_color = [4, 5, 12]  # 月を色付けする
 separate_png = range(0, 15)
 # target_itemlist = [5, 12, 13, 14]
 icol_xaxis = 0
@@ -125,7 +141,8 @@ df3.to_csv(DSTDIR + '/{}-df3.csv'.format(fname_prefix_base), encoding=encoding)
 
 month = df3['month']
 
-with PdfPages(DSTDIR + '/corr-temp-all.pdf'.format(i)) as pdfall:
+fname_sub = 'c' if coloredmonth else 'txt'
+with PdfPages(DSTDIR + '/corr-temp-all-{}.pdf'.format(fname_sub)) as pdfall:
     for i in target_itemlist:
         icol_yaxis = icol_beg2 + i # %% 対象データ列の開始番号
         x_name = df3.columns[icol_xaxis]
@@ -140,7 +157,13 @@ with PdfPages(DSTDIR + '/corr-temp-all.pdf'.format(i)) as pdfall:
         spearmanr_list.append(spearmanr)
 
         # sns.set_style('whitegrid')
-        ax = df3.plot(kind='scatter', x=x_name, y=y_name, c=month, cmap=DarkPaired(), figsize=(8,6))
+        if coloredmonth:
+            ax = df3.plot(kind='scatter', x=x_name, y=y_name, c=month, cmap=DarkPaired(), figsize=(8,6))
+        else:
+            ax = df3.plot(kind='scatter', x=x_name, y=y_name, color=(0, 0, 1, 0.2), figsize=(8,6))
+            for index, row in df3.iterrows():
+                ax.annotate(row['month'], xy=(row[x_name], row[y_name]), size=14)
+
         ax.set_title("Pearson's r = {:.2f}".format(pearsonr[0]))
         plt.gca().spines['right'].set_visible(False)
         plt.gca().spines['top'].set_visible(False)
@@ -154,7 +177,7 @@ with PdfPages(DSTDIR + '/corr-temp-all.pdf'.format(i)) as pdfall:
             plt.savefig(DSTDIR + '/{}.png'.format(fname_prefix), bbox_inches='tight')
 
         if i in separate_pdf_color:
-            plt.savefig(DSTDIR + '/{}-c.pdf'.format(fname_prefix), bbox_inches='tight')
+            plt.savefig(DSTDIR + '/{}-{}.pdf'.format(fname_prefix, fname_sub), bbox_inches='tight')
 
         # plt.show()
         plt.pause(.01)

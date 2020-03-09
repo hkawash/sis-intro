@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import seaborn as sns
 import itertools
-# import re
+import re
 
 DATADIR = '../../data/eStat-purchase-year-city'
 DSTDIR = 'fig_b'
@@ -13,11 +13,20 @@ encoding = 'shift_JIS'
 
 # % e-Stat の家計調査データ
 skiprows = 0  # ヘッダ削除済み
-num_items = 226  # まずは全ての列
-usecols = [2, 3] + [x + 5 for x in range(num_items)]  # 地域区分，年，品目・・・
-# print(usecols)
-csvpath = DATADIR + '/FEH_00200561_190604190707.csv'
-df1 = pd.read_csv(csvpath, thousands=',', skiprows=skiprows, usecols=usecols, encoding=encoding)
+
+use_newdata = True  # どのデータを使うか
+num_items = 226  # 全品目数 (H27版)
+usecols = [48, 49, 50]  # ３列選ぶ（牛，豚，鶏）
+if use_newdata:  # 2020.3月執筆時
+    csvpath = DATADIR + '/FEH_00200561_200308203047.csv'
+    q_year_range = '2015 <= year <= 2019'
+else:  # 2019講義および2020.1月執筆時
+    csvpath = DATADIR + '/FEH_00200561_190604190707.csv'
+    q_year_range = '2014 <= year <= 2018'
+
+allcols = [2, 3] + [x + 5 for x in range(num_items)]  # 地域区分，年，品目・・・
+# print(allcols)
+df1 = pd.read_csv(csvpath, thousands=',', skiprows=skiprows, usecols=allcols, encoding=encoding)
 # print(df1)
 
 # %%
@@ -47,7 +56,7 @@ df1.drop(orig_year_colname, axis=1, inplace=True)
 
 # %% 年の抽出，集計
 # df2 = df1[df1['year'] >= 2016]  # 年の抽出
-df2 = df1.query('2014 <= year <= 2018')
+df2 = df1.query(q_year_range)
 
 rows_to_drop = df2.index[df2['city'] == '全国']  # 「全国」の除外
 df2 = df2.drop(rows_to_drop)
@@ -60,7 +69,6 @@ df2 = groupby.mean()
 # df2 = (df2 - df2.mean()) / df2.std(ddof=0)  # 標準化
 
 # %% 列を選択してクラスタリング
-usecols = [48, 49, 50]  # ３列選ぶ（牛，豚，鶏）
 # usecols = [16, 47, 48]  # 肉をよく食べると牛肉をよく食べるは相関あり．魚とは相関なし
 # collist = [16, 47]  # 魚 vs 肉
 # df2.columns[usecols]
@@ -90,7 +98,9 @@ for colpair in itertools.combinations(usecols, 2):
         for index, row in df2.iterrows():
             # ax.annotate(row['city'], xy=(row[colname[0]], row[colname[1]]), size=6)
             ax.annotate(index, xy=(row[colname[0]], row[colname[1]]), size=8)
-            # ax.colorbar()       
+            # ax.colorbar()
+        ax.set_xlabel(re.sub(r'^[0-9]+ ', '', colname[0]).replace('【1g】', ' (g)'))
+        ax.set_ylabel(re.sub(r'^[0-9]+ ', '', colname[1]).replace('【1g】', ' (g)'))
         # ax.set_aspect('equal', 'datalim')
         # ax.set_aspect('equal')
         # ax.set_aspect(1)

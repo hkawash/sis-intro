@@ -8,9 +8,19 @@ G = nx.DiGraph()
 
 # 小文字の label にすれば Graphviz 側でラベルとして認識される
 # Gephi 側では大文字・小文字どちらでもOK
-G.add_edges_from([('キャンデー', 'チョコレート菓子', {'label': '0.69'})])
-G.add_edges_from([('気温', 'キャンデー', {'label': '-0.79'})])
-G.add_edges_from([('気温', 'チョコレート菓子', {'label': '-0.73   '})])
+use_newdata = True
+if use_newdata:  # 2020.3月執筆時
+    temp2chocosweet = '-0.73   '
+    temp2candy = '-0.79'
+    chocosweet_candy = '0.75'
+else:  # 2020.1月執筆時
+    temp2chocosweet = '-0.73   '
+    temp2candy = '-0.79'
+    chocosweet_candy = '0.69'
+
+G.add_edges_from([('キャンデー', 'チョコレート菓子', {'label': chocosweet_candy})])
+G.add_edges_from([('気温', 'キャンデー', {'label': temp2candy})])
+G.add_edges_from([('気温', 'チョコレート菓子', {'label': temp2chocosweet})])
 # print(list(G.nodes))
 
 # 属性を追加することも可能

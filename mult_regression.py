@@ -43,6 +43,7 @@ x1 = df[[x1label]]
 x2 = df[[x2label]]
 x12 = df[[x1label, x2label]]
 
+
 # %% 他のプログラムでの利用のために出力
 label_dict = {  # 目的変数の候補
     '347 ゼリー【円/日】': 'e_jelly',
@@ -52,6 +53,7 @@ label_dict = {  # 目的変数の候補
     '353 チョコレート菓子【円/日】': 'e_chocosweet',
     '356 アイスクリーム・シャーベット【円/日】': 'e_icecream',
     '日最高気温の平均(℃)': 'hitemp',
+    '平均湿度(％)': 'humidity',
     'year': 'year',
     'month': 'month'
 }
