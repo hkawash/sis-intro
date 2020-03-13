@@ -44,3 +44,18 @@ eStat-purchase-year-city/
     - 降水量の月合計 (未使用)
     - 月平均相対湿度 (未使用)
     - 「期間を選ぶ」で期間を選択
+
+# 加工後のデータ
+
+## city-meat.csv
+
+牛肉・豚肉・鶏肉の都市別購入量(g) （5年平均）
+
+- `df.query('2015 <= year <= 2019').groupby('city').mean()`
+- 年ごとのサンプルサイズは実は結構小さいので，平均をとるのは5年としました．
+- 詳しくは https://github.com/hkawash/sis-intro/blob/master/correlation_meat.py
+
+## sweets-temp.csv
+
+- 各月の日最高気温の月平均と各お菓子の購入額（支出額）を連結
+- 詳しくは https://github.com/hkawash/sis-intro/blob/master/correlation_temp.py

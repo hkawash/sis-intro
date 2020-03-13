@@ -185,7 +185,7 @@ with PdfPages(DSTDIR + '/corr-temp-all-{}.pdf'.format(fname_sub)) as pdfall:
         if coloredmonth:
             ax = df3.plot(kind='scatter', x=x_name, y=y_name, c=month, cmap=DarkPaired(), figsize=(8,6))
         else:
-            ax = df3.plot(kind='scatter', x=x_name, y=y_name, color=(0, 0, 1, 0.3), figsize=(8,6))
+            ax = df3.plot(kind='scatter', x=x_name, y=y_name, color=(0, 0, 1, 0.3))
             for index, row in df3.iterrows():
                 ax.annotate(row['month'], xy=(row[x_name], row[y_name]), size=14)
 
