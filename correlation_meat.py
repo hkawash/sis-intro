@@ -7,6 +7,8 @@ import seaborn as sns
 import itertools
 import re
 
+plt.rcParams["font.size"] = 14
+
 DATADIR = '../../data/eStat-purchase-year-city'
 DSTDIR = 'fig_b'
 encoding = 'shift_JIS'
@@ -68,6 +70,9 @@ df2 = groupby.mean()
 
 # df2 = (df2 - df2.mean()) / df2.std(ddof=0)  # 標準化
 
+#%% 全アイテムを一応保存しておく
+df2.to_csv(DATADIR + '/city-allitem.csv', encoding=encoding)
+
 # %% 列を選択してクラスタリング
 # usecols = [16, 47, 48]  # 肉をよく食べると牛肉をよく食べるは相関あり．魚とは相関なし
 # collist = [16, 47]  # 魚 vs 肉
@@ -81,6 +86,15 @@ sns.pairplot(df3)
 # plt.tight_layout()
 plt.savefig('pairplot-meat.pdf', bbox_inches='tight')
 plt.show()
+
+# %% 教科書用にデータをさらに整理して保存
+# JISコード順にしてから抽出
+df4 = df2.sort_values('jiscode', ascending=True)[df2.columns[usecols]]
+# df4.shape
+df4.columns = ['牛肉', '豚肉', '鶏肉']
+# df4
+df4.to_csv(DATADIR + '/city-meat.csv', encoding=encoding)
+
 
 # %%
 # % 散布図で確認

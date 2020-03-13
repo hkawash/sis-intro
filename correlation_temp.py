@@ -13,10 +13,10 @@ from matplotlib.colors import ListedColormap# %
 # import seaborn as sns
 import re
 
-plt.rcParams["font.size"] = 14
+plt.rcParams["font.size"] = 16
 
 DSTDIR = 'fig_b'
-coloredmonth = True  # 月の色別: False とすると月の数字そのものをマーカーにしてプロット
+coloredmonth = False  # 月の色別: False とすると月の数字そのものをマーカーにしてプロット
 # remove_month = 2
 remove_month = 0  # 0 とすると除去しない
 
@@ -28,7 +28,7 @@ usecols = [0, 1, 4, 7, 11]  # 降水量だけ4列であとは3列ずつ
 encoding = 'shift_JIS'
 csvpath = DATADIR + '/jma-data_20200103.csv'
 df1 = pd.read_csv(csvpath, skiprows=skiprows, usecols=usecols, encoding=encoding)
-df1 = df1.rename(columns={'日最高気温の平均(℃)' : '日最高気温の平均 (℃)'})
+df1 = df1.rename(columns={'日最高気温の平均(℃)' : '日最高気温の月平均 (℃)'})
 print(df1)
 
 
@@ -87,9 +87,8 @@ print(df3.columns)
 
 # 日数で割る
 icol_beg = 5  # 開始列
-num_itemcols = 16  # 処理対象列数
 num_addedcols = 3  # year, month, days
-for i in range(icol_beg, icol_beg + num_itemcols):
+for i in range(icol_beg, icol_beg + num_items):
     col = df3.columns[i]
     coltmp = col.replace('【円】', ' (円/日)')
     colnew = re.sub(r'^[0-9]+ ', '', coltmp)
@@ -103,6 +102,32 @@ for i in range(icol_beg, icol_beg + num_itemcols):
 # ファイルの始めの方で定義 (since 2020.3)
 df3 = df3[df3['yyyymm'].astype(int) >= beg_period]
 df3 = df3[df3['yyyymm'].astype(int) <= end_period]
+
+# %% 教科書用にデータを整理して保存
+# 抽出データの列番号
+mid_added_cols = 3  # year, month, daysの追加分のずれを考慮
+beg_col4book = icol_beg + num_items + mid_added_cols
+end_col4book = beg_col4book + num_items
+cols4book = [0] + list(range(beg_col4book, end_col4book))
+# print(cols4book)
+# 元の列名
+colnames4book_orig = ['year', 'month'] + df3.columns[cols4book].to_list()
+# 簡略化した列名 : まず単位を除去
+colnames4book_new = [re.sub(r' \(.+?\)', '', c) for c in colnames4book_orig]
+# 名前を簡略化
+replacenames4book = {
+    'year': '年',
+    'month': '月',
+    '日最高気温の月平均': '気温',
+    'アイスクリーム・シャーベット': 'アイスクリーム'
+    }
+for k, v in replacenames4book.items():
+    colnames4book_new[colnames4book_new.index(k)] = v
+# print(colnames4book_new)
+df4 = df3[colnames4book_orig]
+df4.columns = colnames4book_new
+df4 = df4.reset_index(drop=True)
+df4.to_csv(DATADIR + '/sweets-temp.csv', encoding=encoding)
 
 
 # %% 散布図
@@ -125,7 +150,7 @@ separate_pdf_color = [4, 5, 12]  # 月を色付けする
 separate_png = range(0, 15)
 # target_itemlist = [5, 12, 13, 14]
 icol_xaxis = 0
-icol_beg2 = icol_beg + num_itemcols + num_addedcols 
+icol_beg2 = icol_beg + num_items + num_addedcols 
 pearsonr_list = []
 spearmanr_list = []
 
@@ -160,7 +185,7 @@ with PdfPages(DSTDIR + '/corr-temp-all-{}.pdf'.format(fname_sub)) as pdfall:
         if coloredmonth:
             ax = df3.plot(kind='scatter', x=x_name, y=y_name, c=month, cmap=DarkPaired(), figsize=(8,6))
         else:
-            ax = df3.plot(kind='scatter', x=x_name, y=y_name, color=(0, 0, 1, 0.2), figsize=(8,6))
+            ax = df3.plot(kind='scatter', x=x_name, y=y_name, color=(0, 0, 1, 0.3), figsize=(8,6))
             for index, row in df3.iterrows():
                 ax.annotate(row['month'], xy=(row[x_name], row[y_name]), size=14)
 
