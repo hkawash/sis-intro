@@ -14,6 +14,7 @@ from sklearn.cluster import KMeans
 from matplotlib.backends.backend_pdf import PdfPages
 import folium
 import itertools
+import japanize_matplotlib
 # import seaborn as sns
 # import re
 
@@ -25,7 +26,7 @@ skiprows = 0  # ヘッダ削除済み
 num_items = 226  # まずは全ての列
 usecols = [2, 3] + [x + 5 for x in range(num_items)]  # 地域区分，年，品目・・・
 # print(usecols)
-csvpath = DATADIR + '/FEH_00200561_190604190707.csv'
+csvpath = DATADIR + '/FEH_0020056190604190707.csv'
 df1 = pd.read_csv(csvpath, thousands=',', skiprows=skiprows, usecols=usecols, encoding=encoding)
 # print(df1)
 
@@ -68,6 +69,7 @@ df2 = groupby.mean()
 
 # df2 = (df2 - df2.mean()) / df2.std(ddof=0)  # 標準化
 
+
 # %% 列を選択してクラスタリング
 usecols = [48, 49, 50]  # ３列選ぶ
 # collist = [16, 47]  # 魚 vs 肉
@@ -90,6 +92,30 @@ with PdfPages('clustering.pdf') as pdf_clustering:
         ax.axis('scaled')
 
         pdf_clustering.savefig()
+
+
+# %%
+# 3次元散布図
+from mpl_toolkits.mplot3d import Axes3D
+colname = [df2.columns[c] for c in usecols]  # 3軸のデータの各列名
+
+for color_flag in [False, True]:
+    fig3d = plt.figure()
+    ax3d = Axes3D(fig3d)
+    ax3d.set_xlabel(colname[0])
+    ax3d.set_ylabel(colname[1])
+    ax3d.set_zlabel(colname[2])
+    if color_flag:
+        ax3d.scatter(df2[colname[0]], df2[colname[1]], df2[colname[2]], c=pred, cmap='brg')
+        figname = 'plot3d_clustering'
+    else:
+        ax3d.scatter(df2[colname[0]], df2[colname[1]], df2[colname[2]])
+        figname = 'plot3d_original'
+    # plt.show()
+    plt.savefig(figname + '.png')
+    plt.savefig(figname + '.pdf')
+
+
 
 
 # %% 地図上にプロット ------------------------------
