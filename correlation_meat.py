@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
+import japanize_matplotlib
 import seaborn as sns
 import itertools
 import re
@@ -129,3 +130,4 @@ for colpair in itertools.combinations(usecols, 2):
 
 
 print(len(df3.index))
+# %%

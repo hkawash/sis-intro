@@ -127,7 +127,7 @@ for k, v in replacenames4book.items():
 df4 = df3[colnames4book_orig]
 df4.columns = colnames4book_new
 df4 = df4.reset_index(drop=True)
-df4.to_csv(DATADIR + '/sweets-temp.csv', encoding=encoding)
+df4.to_csv(DATADIR + '/sweets-temp.csv', index=False, encoding=encoding)
 
 
 # %% 散布図
